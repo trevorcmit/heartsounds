@@ -45,8 +45,8 @@ model = cnn_model()
 model.summary()
 model.fit(x_tr, y_tr, epochs=50, batch_size=20, validation_data=(x_val, y_val))
 
+Number = '68' # Number of model for identification
 model.save('Models/Single Beat #' + Number, save_format='tf')
-
 plt.plot(history.history['loss'], label='Train Loss')
 plt.plot(history.history['val_loss'], label='Test Loss')
 plt.legend()
