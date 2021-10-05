@@ -9,14 +9,13 @@ import librosa.display
 from scipy.io.wavfile import read, write
 
 dataset = list()
-for folder in tqdm(os.listdir('New Wavs')): # Folder type
-    path = 'MQ Wavs'
-    for file in os.listdir(path): # File in specific folder
+path = 'MQ Wavs'
+for folder in tqdm(os.listdir(path)): # Folder type
+    filepath = os.path.join(path, folder)
+    for file in os.listdir(filepath): # File in specific folder
         counter = 0
         label = file # Save patient number for filename
-        filepath = os.path.join(path, file)
         data, sr = librosa.load(filepath, sr=8000)
-    
         mel = librosa.feature.melspectrogram(y=n, sr=sr)
         meldb = librosa.core.power_to_db(mel, ref=np.max) # Power scale to decibel
         librosa.display.specshow(meldb, y_axis='mel', x_axis='time')
