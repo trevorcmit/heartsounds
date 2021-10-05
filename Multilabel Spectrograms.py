@@ -23,7 +23,13 @@ for folder in tqdm(os.listdir('New Wavs')): # Folder type
         plt.axis('off')
         plt.xticks(color='w')
         plt.yticks(color='w') # Remove labels and formatting on image
-        plt.xlabel("")
-        plt.ylabel("")
+        plt.xlabel(None)
+        plt.ylabel(None)
+        plt.tick_params(
+            axis='both', which="both", 
+            labelbottom=False, labelleft=False,
+            bottom=False, top=False, 
+            left=False, right=False
+        )
         save = 'MQ Spect/' + label + '.png'
         plt.savefig(save, bbox_inches='tight', pad_inches=0)
