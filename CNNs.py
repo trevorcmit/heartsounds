@@ -1,6 +1,5 @@
 # Necessary imports
 import sys
-import os
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
@@ -10,6 +9,7 @@ from sklearn.model_selection import train_test_split
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Flatten, Conv2D, MaxPooling2D, Dropout, AveragePooling2D
 from keras.callbacks import History
+
 
 #### Load Data and split into Testing/Training ####
 data = np.load('training_data.npy', allow_pickle=True)
@@ -44,6 +44,7 @@ def cnn_model():
 model = cnn_model()
 model.summary()
 model.fit(x_tr, y_tr, epochs=50, batch_size=20, validation_data=(x_val, y_val))
+
 
 number = '68' # Number of model for identification
 model.save('Models/Single Beat #' + number, save_format='tf')

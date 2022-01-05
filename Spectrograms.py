@@ -32,6 +32,7 @@ for folder in tqdm(os.listdir(path)): # Folder type
         save = 'MQ Spect/' + label + '.png'
         plt.savefig(save, bbox_inches='tight', pad_inches=0)
 
+
 # mel = librosa.feature.melspectrogram(y=data.astype(float), sr=8000)
 # meldb = librosa.core.power_to_db(mel, ref=np.max) # Power scale to decibel
 # librosa.display.specshow(meldb, y_axis='mel', x_axis='time', sr=8000)
