@@ -1,11 +1,10 @@
-import sys
 import librosa
 import librosa.display
 import matplotlib.pyplot as plt
 import numpy as np
-from scipy.io.wavfile import read
 from tqdm import tqdm
 import os
+
 
 dataset = list()
 path = 'New Wavs' # Folder directory for current folder to convert

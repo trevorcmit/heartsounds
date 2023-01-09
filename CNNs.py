@@ -1,14 +1,14 @@
 # Necessary imports
+
 import sys
 import numpy as np
-import cv2
 import matplotlib.pyplot as plt
 from tqdm import tqdm
-import tensorflow as tf
-from sklearn.model_selection import train_test_split
+# import tensorflow as tf
+# from sklearn.model_selection import train_test_split
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Flatten, Conv2D, MaxPooling2D, Dropout, AveragePooling2D
-from keras.callbacks import History
+# from keras.callbacks import History
 
 
 #### Load Data and split into Testing/Training ####
@@ -21,6 +21,8 @@ X, Y = np.array(X).reshape(-1, 320, 240, 3), np.array(Y) # Reshape to fit CNN in
 X = X / 255.0
 x_tr, x_val, y_tr, y_val = train_test_split(X, Y, stratify=Y, test_size=0.20, shuffle=True)
 
+
+sys.exit()
 
 #### Construct Neural Network and Train ####
 history = History() # Initialize history for plotting later

@@ -3,7 +3,7 @@ import librosa
 import matplotlib.pyplot as plt
 import librosa.display
 import os
-import sys
+
 
 def AudioToMelspectro(file, graph=False, save=False):
     """
