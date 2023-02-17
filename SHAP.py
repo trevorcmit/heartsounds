@@ -59,7 +59,6 @@ def CNN_explainer(vals, training, model, plot=True):
 #     left=False, right=False
 # )
 # plt.show()
-# sys.exit()
 
 
 #### Pick Model and Load Dataset ####
@@ -91,8 +90,14 @@ img = img.astype(float)
 
 #### SHAP Calculations ####
 background = x_tr[np.random.choice(x_tr.shape[0], 100, replace=False)] # Create background training for SHAP algorithm
+
+import sys
+print(img.shape); sys.exit()
+# import sys
+# sys.exit()
 e = shap.DeepExplainer(model, background)                              # Initialize SHAP Deep Explainer
 shap_values = e.shap_values(img)                                       # Calculate the SHAP Values
+
 
 shap.image_plot(shap_values, img, show=False)
 plt.show()
